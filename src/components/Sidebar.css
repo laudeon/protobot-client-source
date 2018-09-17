@@ -1,0 +1,12 @@
+aside.Sidebar {
+  height: 85vh;
+  width: 30vw;
+  padding: 2rem;
+  background: #455A64;
+  color: #ffffff;
+  text-align: center;
+}
+
+aside.Sidebar img.App-logo {
+  width: 10vw;
+}

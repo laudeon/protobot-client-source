@@ -1,0 +1,85 @@
+section.Conversation {
+  overflow-y: auto;
+  height: 85vh;
+  width: 70vw;
+}
+
+section.Conversation ul.protobotConversation {
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 1rem 8vw;
+}
+
+section.Conversation ul.protobotConversation div.list-element {
+  clear: both;
+}
+
+section.Conversation ul.protobotConversation div.list-element div {
+  position: relative;
+  max-width: 50%;
+  min-width: 25vw;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  color: #ffffff;
+  clear: both;
+}
+
+section.Conversation ul.protobotConversation div.list-element span {
+  color: #aaaaaa;
+  font-size: .8rem;
+}
+
+section.Conversation ul.protobotConversation div.list-element.user {
+  float: right;
+  position: relative;
+}
+
+section.Conversation ul.protobotConversation div.list-element.user div {
+  background: #00695C;
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, .3);
+}
+
+section.Conversation ul.protobotConversation div.list-element.chatbot {
+  float: left;
+}
+
+section.Conversation ul.protobotConversation div.list-element.chatbot div {
+  background: #1565C0;
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, .3);
+}
+
+section.Conversation ul.protobotConversation div.list-element div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+}
+
+section.Conversation ul.protobotConversation div.list-element div:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 14px solid rgba(0, 0, 0, .1);
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+}
+
+section.Conversation ul.protobotConversation div.list-element.user div:after {
+  right: -14px;
+  border-top: 14px solid #00695C;
+}
+
+section.Conversation ul.protobotConversation div.list-element.chatbot div:after {
+  left: -14px;
+  border-top: 14px solid #1565C0;
+}
+
+section.Conversation ul.protobotConversation div.list-element.user div:before {
+  right: -16px;
+}
+
+section.Conversation ul.protobotConversation div.list-element.chatbot div:before {
+  left: -16px;
+}

@@ -1,0 +1,18 @@
+form.BotForm textarea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 15vh;
+  min-height: 50px;
+  margin: 0;
+  padding: 1rem;
+  border: none;
+  border-top: 1px solid #dddddd;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow .2s;
+}
+
+form.BotForm textarea:hover {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
