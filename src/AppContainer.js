@@ -23,7 +23,8 @@ class AppContainer extends Component {
   static calculateState (prevState) {
     return {
       messages: MessageStore.getState(),
-      addMessage: MessageActions.addMessage
+      addMessage: MessageActions.addMessage,
+      removeLastMessage: MessageActions.removeLastMessage
     }
   }
 

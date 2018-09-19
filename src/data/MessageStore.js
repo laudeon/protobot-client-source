@@ -29,6 +29,13 @@ class MessageStore extends ReduceStore {
           datetime: new Date(action.message.datetime)
         }))
 
+      case MessageActionTypes.REMOVE_LAST_MESSAGE: 
+        const lastMessage = state.last()
+        console.log(lastMessage)
+        if (lastMessage.text === '...') {
+          return state.skipLast(1)
+        }
+  
       default:
         return state
     }

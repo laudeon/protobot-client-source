@@ -7,6 +7,12 @@ const Actions = {
       type: MessageActionTypes.ADD_MESSAGE,
       message
     })
+  },
+
+  removeLastMessage () {
+    AppDispatcher.dispatch({
+      type: MessageActionTypes.REMOVE_LAST_MESSAGE
+    })
   }
 }
 

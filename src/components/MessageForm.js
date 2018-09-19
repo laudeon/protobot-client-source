@@ -14,6 +14,8 @@ class MessageForm extends Component {
     this.conversationElem = null
     this.talk = this.talk.bind(this)
     this.scrollDown = this.scrollDown.bind(this)
+    this.botTyping = this.botTyping.bind(this)
+    this.stopBotTyping = this.stopBotTyping.bind(this)
   }
 
   static get propTypes () {
@@ -28,6 +30,7 @@ class MessageForm extends Component {
     this.conversationElem = document.querySelector('section.Conversation')
     this.textareaElem = document.querySelector('form.BotForm textarea')
     this.props.socket.on('response', this.scrollDown)
+    this.props.socket.on('response', this.stopBotTyping)
     this._initForm()
   }
 
@@ -37,6 +40,7 @@ class MessageForm extends Component {
     this.props.addMessage(message)
     this.props.socket.emit('message', message)
     this.scrollDown()
+    this.botTyping()
   }
 
   _initForm () {
@@ -62,6 +66,18 @@ class MessageForm extends Component {
       this.conversationElem.scrollTo(0, (this.conversationElem.scrollHeight + 500))
       debug(this.conversationElem.clientHeight)
     }, 100)
+  }
+
+  botTyping () {
+    this.props.addMessage({
+      text: '...',
+      user: 'chatbot',
+      datetime: new Date()
+    })
+  }
+
+  stopBotTyping () {
+    this.props.removeLastMessage()
   }
 
   render () {
