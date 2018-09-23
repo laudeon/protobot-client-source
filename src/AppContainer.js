@@ -5,8 +5,7 @@ import App from './components/App'
 import MessageStore from './data/MessageStore'
 import MessageActions from './data/MessageActions'
 
-const WS_URL = 'https://protobot-api.herokuapp.com'
-// const WS_URL = 'http://localhost:4000'
+const WS_URL = process.env.NODE_ENV === 'production' ? 'https://protobot-api.herokuapp.com' : 'http://localhost:4000'
 
 class AppContainer extends Component {
   constructor () {
